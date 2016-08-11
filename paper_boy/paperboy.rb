@@ -21,14 +21,23 @@ class Paper_boy
 
     if papes_delivered < @quota
       start_pay -= 2
+      @earnings += start_pay
+      @experience += papes_delivered
       return start_pay
     elsif papes_delivered == quota
+      @earnings += start_pay
+      @experience += papes_delivered
       return start_pay
     else
-      puts "over_pay"
-
       over_pay = (papes_delivered - quota) * 0.25 + start_pay
+      @earnings += over_pay
+      @experience += papes_delivered
       return over_pay
     end
   end
+
+  def report
+    puts "I'm #{@name}. I've delivered #{@experience} papers and made $#{@earnings}."
+  end
+
 end
