@@ -7,6 +7,11 @@ class Cat
 
   def eats_at
     @meal_time
+  end
+
+  def meow
+    "My name is #{@name} and I eat #{@preffered_food} at #{@meal_time}."
+  end
 end
 
 a = Cat.new("Alex", "Chips", 10)
