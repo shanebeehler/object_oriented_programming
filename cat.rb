@@ -4,6 +4,9 @@ class Cat
     @preffered_food = preffered_food
     @meal_time = meal_time
   end
+
+  def eats_at
+    @meal_time
 end
 
 a = Cat.new("Alex", "Chips", 10)
